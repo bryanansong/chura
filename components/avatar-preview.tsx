@@ -62,9 +62,15 @@ function FeatureImage({
 
   let imageUrl = feature.imageUrl;
   if (featureType === "hair" && skinTone) {
-    const skinToneLabel = getFeatureDetails("skin-tone", skinTone)?.label;
-    imageUrl =
-      modifySupabaseUrl(imageUrl, skinToneLabel || "", "hair") || imageUrl;
+    const skinToneFeature = getFeatureDetails("skin-tone", skinTone);
+    if (skinToneFeature?.label && imageUrl) {
+      const modifiedUrl = modifySupabaseUrl(
+        imageUrl,
+        skinToneFeature.label,
+        "hair"
+      );
+      imageUrl = modifiedUrl || imageUrl;
+    }
   }
 
   return (
@@ -78,33 +84,33 @@ function FeatureImage({
 
 export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
   return (
-    <div className="flex flex-col bg-[#F4F4F1] flex-1 w-full justify-center items-center gap-20 p-20">
-      <div className="relative flex justify-center items-center aspect-square bg-white rounded-full w-96 h-96 shadow-md p-10">
+    <div className="flex flex-col bg-[#F4F4F1] flex-1 w-full justify-center items-center gap-6 sm:gap-20 p-6 sm:p-20">
+      <div className="relative flex justify-center items-center aspect-square bg-white rounded-full w-64 sm:w-96 h-64 sm:h-96 shadow-md p-6 sm:p-10">
         <FeatureImage
           featureType="hair"
-          selectedId={selectedOptions.hair}
-          skinTone={selectedOptions["skin-tone"]}
+          selectedId={selectedOptions.hair || null}
+          skinTone={selectedOptions["skin-tone"] || null}
           className="h-full w-full"
         />
         <FeatureImage
           featureType="facial-expression"
-          selectedId={selectedOptions["facial-expression"]}
-          className="absolute ml-16 mt-14 w-2/5 h-1/2"
+          selectedId={selectedOptions["facial-expression"] || null}
+          className="absolute ml-12 sm:ml-16 mt-10 sm:mt-14 w-2/5 h-1/2"
         />
         <FeatureImage
           featureType="facial-hair"
-          selectedId={selectedOptions["facial-hair"]}
-          className="absolute ml-10 w-[38%] mt-[180px]"
+          selectedId={selectedOptions["facial-hair"] || null}
+          className="absolute ml-8 sm:ml-10 w-[39%] mt-[130px] sm:mt-[180px]"
         />
         <FeatureImage
           featureType="accessories"
-          selectedId={selectedOptions.accessories}
-          className="absolute ml-2 w-[50%] mt-7"
+          selectedId={selectedOptions.accessories || null}
+          className="absolute ml-1 sm:ml-2 w-[50%] mt-5 sm:mt-7"
         />
       </div>
-      <div className="flex flex-col gap-10 min-w-60">
-        <Button>Download</Button>
-        <Button>Copy to Clipboard</Button>
+      <div className="flex flex-col gap-4 sm:gap-10 w-64 sm:min-w-60">
+        <Button className="w-full">Download</Button>
+        <Button className="w-full">Copy to Clipboard</Button>
       </div>
     </div>
   );
