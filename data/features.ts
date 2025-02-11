@@ -37,12 +37,12 @@ export const features: Feature[] = [
 
 export const featureOptions: Record<FeatureType, FeatureOption[]> = {
   "skin-tone": [
-    { id: "skin-1", type: "skin-tone", label: "#694D3D", color: "#694D3D" },
-    { id: "skin-2", type: "skin-tone", label: "#AE5D29", color: "#AE5D29" },
-    { id: "skin-3", type: "skin-tone", label: "#D08B5B", color: "#D08B5B" },
-    { id: "skin-4", type: "skin-tone", label: "#EDB98A", color: "#EDB98A" },
-    { id: "skin-5", type: "skin-tone", label: "#FFDBB4", color: "#FFDBB4" },
-    { id: "skin-6", type: "skin-tone", label: "#FFD11B", color: "#FFD11B" },
+    { id: "skin-1", type: "skin-tone", label: "694D3D", color: "#694D3D" },
+    { id: "skin-2", type: "skin-tone", label: "AE5D29", color: "#AE5D29" },
+    { id: "skin-3", type: "skin-tone", label: "D08B5B", color: "#D08B5B" },
+    { id: "skin-4", type: "skin-tone", label: "EDB98A", color: "#EDB98A" },
+    { id: "skin-5", type: "skin-tone", label: "FFDBB4", color: "#FFDBB4" },
+    { id: "skin-6", type: "skin-tone", label: "FFD11B", color: "#FFD11B" },
   ],
   hair: [
     {
