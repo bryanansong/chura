@@ -467,7 +467,7 @@ export const featureOptions: Record<FeatureType, FeatureOption[]> = {
       type: "facial-hair",
       label: "None",
       imageUrl:
-        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/facial-hair/_None.svg",
+        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/facial-hair/_%20None.svg",
     },
     {
       id: "chin-svg",
@@ -588,7 +588,7 @@ export const featureOptions: Record<FeatureType, FeatureOption[]> = {
       type: "accessories",
       label: "None",
       imageUrl:
-        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/accessories/_None.svg",
+        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/accessories/_%20None.svg",
     },
     {
       id: "eyepatch",
