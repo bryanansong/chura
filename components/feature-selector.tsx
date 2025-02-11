@@ -22,20 +22,20 @@ export function FeatureSelector({
   onSelectFeature,
 }: FeatureSelectorProps) {
   return (
-    <Sidebar collapsible="none" className="w-[250px] border-r">
+    <Sidebar collapsible="none" className="w-full lg:w-[250px] border-r">
       <SidebarHeader>
-        <div className="flex items-center gap-2 p-5">
+        <div className="hidden items-center gap-2 p-4 lg:flex lg:p-5">
           <Image
             width={30}
             height={30}
             alt="logo"
             src="https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/public/chura-logo.svg"
           />
-          <span className="text-3xl">Chura</span>
+          <span className="text-2xl lg:text-3xl">Chura</span>
         </div>
       </SidebarHeader>
       <SidebarContent>
-        <div className="flex flex-col gap-6 p-3 h-full justify-center">
+        <div className="grid grid-cols-5 gap-2 p-2 lg:flex lg:flex-col lg:gap-6 lg:p-3 lg:h-full lg:justify-center">
           {features.map((feature) => {
             const Icon = feature.icon;
             return (
@@ -43,14 +43,16 @@ export function FeatureSelector({
                 asChild
                 key={feature.id}
                 className={cn(
-                  "justify-start gap-2 h-9",
+                  "flex-shrink-0 justify-center lg:justify-start gap-2 h-12 lg:w-auto lg:h-9 w-full",
                   selectedFeature === feature.type && "bg-muted"
                 )}
                 onClick={() => onSelectFeature(feature.type)}
               >
-                <a href="#">
-                  <Icon className="h-12 w-12" />
-                  <span className="text-lg">{feature.label}</span>
+                <a href="#" className="flex flex-col lg:flex-row items-center">
+                  <Icon className="h-6 w-6 lg:h-12 lg:w-12" />
+                  <span className="hidden lg:inline text-lg">
+                    {feature.label}
+                  </span>
                 </a>
               </SidebarMenuButton>
             );
