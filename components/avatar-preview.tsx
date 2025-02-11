@@ -84,7 +84,7 @@ function FeatureImage({
 
 export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
   return (
-    <div className="flex flex-col bg-[#F4F4F1] flex-1 w-full justify-center items-center gap-6 sm:gap-20 p-6 sm:p-20">
+    <div className="flex flex-col bg-[#F4F4F1] flex-1 w-full justify-center items-center gap-6 max-sm:py-28 sm:gap-20 p-6 sm:p-20">
       <div className="relative flex justify-center items-center aspect-square bg-white rounded-full w-64 sm:w-96 h-64 sm:h-96 shadow-md p-6 sm:p-10">
         <FeatureImage
           featureType="hair"
