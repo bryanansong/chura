@@ -8,6 +8,34 @@ interface AvatarPreviewProps {
   selectedOptions: AvatarState;
 }
 
+const modifySupabaseUrl = (
+  url: string,
+  insertSegment: string,
+  afterSegment: string
+) => {
+  try {
+    const urlObj = new URL(url);
+    const pathSegments = urlObj.pathname.split("/");
+
+    // Find index of the specified segment
+    const insertIndex = pathSegments.indexOf(afterSegment);
+    if (insertIndex !== -1) {
+      pathSegments.splice(insertIndex + 1, 0, insertSegment);
+    } else {
+      throw new Error(`Segment "${afterSegment}" not found in URL path.`);
+    }
+
+    // Construct the new URL
+    urlObj.pathname = pathSegments.join("/");
+
+    console.log("New urllllll: \n", urlObj.toString());
+    return urlObj.toString();
+  } catch (error) {
+    console.error("Error modifying URL:", error);
+    return null;
+  }
+};
+
 export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
   return (
     <div className="flex flex-col bg-[#F4F4F1] flex-1 w-full justify-center items-center gap-20 p-20">
@@ -15,9 +43,15 @@ export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
         {selectedOptions.hair && (
           <img
             src={
-              featureOptions["hair"].filter(
-                (val) => val.id === selectedOptions["hair"]
-              )[0].imageUrl
+              modifySupabaseUrl(
+                featureOptions["hair"].filter(
+                  (val) => val.id === selectedOptions["hair"]
+                )[0].imageUrl || "",
+                featureOptions["skin-tone"].filter(
+                  (val) => val.id === selectedOptions["skin-tone"]
+                )[0]?.label || "",
+                "hair"
+              ) || ""
             }
             alt={
               featureOptions["hair"].filter(
@@ -39,7 +73,7 @@ export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
                 (val) => val.id === selectedOptions["facial-hair"]
               )[0].label || "Option image"
             }
-            className="absolute ml-3 h-2/5 w-1/2 mt-52 object-contain"
+            className="absolute ml-20 w-[36%] mt-[180px] object-contain"
           />
         )}
         {selectedOptions["facial-expression"] && (
@@ -54,7 +88,7 @@ export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
                 (val) => val.id === selectedOptions["facial-expression"]
               )[0].label || "Option image"
             }
-            className="absolute ml-14 mt-14 w-3/5 h-1/2 object-contain"
+            className="absolute ml-20 mt-14 w-2/5 h-1/2 object-contain"
           />
         )}
         {selectedOptions.accessories && (
