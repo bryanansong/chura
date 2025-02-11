@@ -73,13 +73,13 @@ export const featureOptions: Record<FeatureType, FeatureOption[]> = {
       imageUrl:
         "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/hat-beanie.svg",
     },
-    {
-      id: "long",
-      type: "hair",
-      label: "Long",
-      imageUrl:
-        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/Long.svg",
-    },
+    // {
+    //   id: "long",
+    //   type: "hair",
+    //   label: "Long",
+    //   imageUrl:
+    //     "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/Long.svg",
+    // },
     {
       id: "bangs-2",
       type: "hair",
@@ -206,13 +206,13 @@ export const featureOptions: Record<FeatureType, FeatureOption[]> = {
       imageUrl:
         "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/Gray%20Medium.svg",
     },
-    {
-      id: "long-bangs",
-      type: "hair",
-      label: "Long Bangs",
-      imageUrl:
-        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/Long%20Bangs.svg",
-    },
+    // {
+    //   id: "long-bangs",
+    //   type: "hair",
+    //   label: "Long Bangs",
+    //   imageUrl:
+    //     "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/hair/Long%20Bangs.svg",
+    // },
     {
       id: "medium-bangs-2",
       type: "hair",
