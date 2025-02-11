@@ -27,7 +27,7 @@ export default function AvatarCustomizer() {
 
   return (
     <SidebarProvider>
-      <div className="flex h-screen w-full">
+      <div className="flex min-h-screen lg:h-screen w-full max-lg:flex-col-reverse">
         <FeatureSelector
           features={features}
           selectedFeature={selectedFeature}
