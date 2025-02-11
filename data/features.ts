@@ -24,13 +24,13 @@ export const features: Feature[] = [
   {
     id: "facial-hair",
     type: "facial-hair",
-    icon: Glasses,
+    icon: Sparkles,
     label: "Facial Hair",
   },
   {
     id: "accessories",
     type: "accessories",
-    icon: Sparkles,
+    icon: Glasses,
     label: "Accessories",
   },
 ];
@@ -567,13 +567,13 @@ export const featureOptions: Record<FeatureType, FeatureOption[]> = {
       imageUrl:
         "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/facial-hair/Moustache%207.svg",
     },
-    {
-      id: "moustache-8-svg",
-      type: "facial-hair",
-      label: "Moustache 8",
-      imageUrl:
-        "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/facial-hair/Moustache%208.svg",
-    },
+    // {
+    //   id: "moustache-8-svg",
+    //   type: "facial-hair",
+    //   label: "Moustache 8",
+    //   imageUrl:
+    //     "https://jdkukteudoytrofyfkzt.supabase.co/storage/v1/object/public/chura-resources/facial-hair/Moustache%208.svg",
+    // },
     {
       id: "moustache-9-svg",
       type: "facial-hair",
