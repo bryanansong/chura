@@ -15,12 +15,12 @@ export function OptionGrid({
   onSelectOption,
 }: OptionGridProps) {
   return (
-    <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-5 p-3 sm:p-4">
       {options?.map((option) => (
         <button
           key={option.id}
           className={cn(
-            "aspect-square rounded-lg border p-2 hover:bg-muted relative",
+            "aspect-square rounded-lg border p-2 hover:bg-muted relative transition-colors",
             selectedOption === option.id && "border-primary bg-muted",
             option.color && `bg-[${option.color}]`
           )}
