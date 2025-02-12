@@ -108,7 +108,7 @@ export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
           className="absolute ml-1 sm:ml-2 w-[50%] mt-5 sm:mt-7"
         />
       </div>
-      <div className="flex flex-col gap-4 sm:gap-5 w-64 sm:min-w-60">
+      {/* <div className="flex flex-col gap-4 sm:gap-5 w-64 sm:min-w-60">
         <span className="text-center text-sm text-slate-800/50">
           These don't work but support is coming soon 😊
         </span>
@@ -118,7 +118,7 @@ export function AvatarPreview({ selectedOptions }: AvatarPreviewProps) {
         <Button disabled className="w-full">
           Copy to Clipboard
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
